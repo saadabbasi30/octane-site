@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Octane Performance Center | Auto Repair in Colonial Beach, VA</title>
+<meta name="description" content="Auto repair in Colonial Beach, VA. Diagnostics, brakes, oil service, suspension, engine and drivetrain repair. 3161 Kings Hwy. Call (804) 214-7627.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23F5A623'/%3E%3Cpath d='M8 29a12 12 0 1 1 24 0' fill='none' stroke='%230F1115' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M20 29l7-9' stroke='%230F1115' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Octane Performance Center","telephone":"+1-804-214-7627","address":{"@type":"PostalAddress","streetAddress":"3161 Kings Hwy","addressLocality":"Colonial Beach","addressRegion":"VA","postalCode":"22443","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}]}
+</script>
+<style>
+:root{
+ --accent:#F5A623;--accent-hover:#FFB940;--accent-soft:#FFF4E0;
+ --bg:#FFFFFF;--surface:#F4F5F7;--line:#E5E7EB;
+ --ink:#0F1115;--body:#434852;--muted:#6B7079;
+ --pad:clamp(20px,7vw,112px);--r-lg:28px;--r-md:18px;--r-sm:12px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:'Archivo','Helvetica Neue',Arial,sans-serif;font-stretch:100%;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+h1,h2,h3{margin:0;font-stretch:118%;letter-spacing:-.02em;line-height:1}
+p{margin:0}
+.wrap{padding-left:var(--pad);padding-right:var(--pad)}
+.tag{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:8px 14px;border-radius:999px;background:var(--accent-soft);color:#8A5300;font-size:14px;font-weight:600}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:600;font-size:16px;transition:background .15s,border-color .15s,transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:#262A31}
+.btn-accent{background:var(--accent);color:var(--ink)}
+.btn-accent:hover{background:var(--accent-hover)}
+.btn-ghost{border:1.5px solid var(--line);color:var(--ink);background:#fff}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:16px;padding-bottom:16px;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid transparent}
+.nav.scrolled{border-bottom-color:var(--line)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:42px;height:42px;border-radius:12px;background:var(--accent);display:grid;place-items:center}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-text b{font-weight:800;font-stretch:125%;font-size:21px;letter-spacing:.02em}
+.logo-text small{font-size:11px;font-weight:500;letter-spacing:.12em;color:var(--muted);margin-top:4px}
+.nav-links{display:flex;align-items:center;gap:32px;font-weight:500;font-size:15px}
+.nav-links a:not(.btn){color:var(--body)}
+.nav-links a:not(.btn):hover{color:var(--ink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-top:72px;padding-bottom:88px}
+.hero-copy{display:flex;flex-direction:column;gap:28px}
+.hero h1{font-weight:800;font-size:clamp(50px,6.4vw,96px)}
+.hero p{font-size:clamp(18px,1.4vw,20px);line-height:1.6;color:var(--body);max-width:500px}
+.gauge{position:relative;border-radius:var(--r-lg);background:var(--surface);padding:48px 40px 40px;display:flex;flex-direction:column;gap:28px;overflow:hidden}
+.gauge svg{width:100%;max-width:440px;height:auto;align-self:center}
+.gauge-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#fff;border-radius:var(--r-md);padding:20px 24px;box-shadow:0 1px 2px rgba(15,17,21,.04),0 8px 24px rgba(15,17,21,.06)}
+.gauge-foot small{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-bottom:4px}
+.gauge-foot strong{font-weight:700;font-stretch:112%;font-size:clamp(20px,1.8vw,24px)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--surface);font-size:14px;font-weight:500;color:var(--body)}
+.needle{transform-origin:220px 260px;animation:rev 1.4s cubic-bezier(.3,1.4,.5,1) .2s both}
+@keyframes rev{from{transform:rotate(-90deg)}to{transform:rotate(0)}}
+@media (prefers-reduced-motion:reduce){.needle{animation:none}}
+
+/* quick info */
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:40px}
+.quick>*{display:flex;align-items:center;gap:16px;padding:22px 24px;border:1px solid var(--line);border-radius:var(--r-md);background:#fff;transition:border-color .15s}
+.quick a:hover{border-color:var(--ink)}
+.quick .ico{flex:none;width:48px;height:48px;border-radius:14px;background:var(--accent-soft);display:grid;place-items:center}
+.quick small{display:block;font-size:13px;color:var(--muted);margin-bottom:2px}
+.quick span{font-size:17px;font-weight:600}
+
+/* sections */
+.section{padding-top:clamp(72px,9vw,120px);padding-bottom:clamp(72px,9vw,120px)}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:48px}
+.head h2{font-weight:800;font-size:clamp(40px,4.6vw,68px);margin-top:18px}
+.head p{font-size:18px;line-height:1.6;color:var(--body);max-width:420px}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{display:flex;flex-direction:column;gap:14px;padding:32px;background:var(--surface);border-radius:var(--r-md);transition:background .15s}
+.card:hover{background:#EDEEF1}
+.card .ico{width:56px;height:56px;border-radius:16px;background:#fff;display:grid;place-items:center;margin-bottom:10px}
+.card h3{font-weight:700;font-size:24px;font-stretch:112%}
+.card p{font-size:16px;line-height:1.6;color:var(--body)}
+.card.feature{background:var(--ink);color:#fff}
+.card.feature:hover{background:#1B1E24}
+.card.feature .ico{background:rgba(255,255,255,.08)}
+.card.feature p{color:#C9CCD2}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.photo{min-height:520px;border-radius:var(--r-lg);background:var(--surface);border:1.5px dashed #CDD0D5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--muted);font-weight:500;text-align:center;padding:20px;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.about-copy{display:flex;flex-direction:column;gap:22px}
+.about-copy h2{font-weight:800;font-size:clamp(40px,4.4vw,64px)}
+.about-copy p{font-size:18px;line-height:1.7;color:var(--body)}
+.points{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.points div{padding:22px;border-radius:var(--r-md);border:1px solid var(--line)}
+.points b{display:block;font-weight:700;font-size:18px;margin-bottom:6px}
+.points span{font-size:15px;line-height:1.5;color:var(--body)}
+
+/* steps */
+.steps-sec{background:var(--surface)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0;padding:0;list-style:none}
+.steps li{display:flex;flex-direction:column;gap:12px;padding:32px;background:#fff;border-radius:var(--r-md)}
+.num{width:44px;height:44px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-weight:700;font-size:17px;margin-bottom:12px}
+.steps strong{font-size:22px;font-weight:700;font-stretch:112%}
+.steps span{font-size:16px;line-height:1.6;color:var(--body)}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.hours{display:flex;flex-direction:column;gap:22px;padding:clamp(28px,4vw,48px);border:1px solid var(--line);border-radius:var(--r-lg)}
+.hours h2{font-weight:800;font-size:clamp(36px,3.6vw,52px)}
+.hours table{width:100%;border-collapse:collapse;font-size:17px}
+.hours td{padding:14px 0;border-bottom:1px solid var(--line)}
+.hours td:first-child{font-weight:600}
+.hours td:last-child{text-align:right;color:var(--body);font-variant-numeric:tabular-nums}
+.hours tr:last-child td{border-bottom:0;color:var(--muted)}
+.visit-side{display:flex;flex-direction:column;gap:16px}
+.map{flex:1;position:relative;min-height:340px;border-radius:var(--r-lg);background:#EEF0F2;overflow:hidden;display:block}
+.map svg.bg{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;gap:8px}
+.pin span{background:#fff;color:var(--ink);padding:10px 16px;border-radius:999px;font-size:14px;font-weight:600;white-space:nowrap;box-shadow:0 8px 24px rgba(15,17,21,.12)}
+.loc{display:flex;flex-direction:column;gap:18px;padding:36px;background:var(--surface);border-radius:var(--r-lg)}
+.loc address{font-style:normal;font-weight:700;font-stretch:112%;font-size:clamp(24px,2.2vw,30px);line-height:1.2}
+
+/* cta */
+.cta-wrap{padding-bottom:clamp(72px,9vw,120px)}
+.cta{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;padding:clamp(36px,5vw,72px);border-radius:var(--r-lg);background:var(--accent)}
+.cta h2{font-weight:800;font-size:clamp(38px,4.6vw,68px)}
+.cta p{margin-top:14px;font-size:18px;color:#3A2A08}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding-top:56px;padding-bottom:36px}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+.foot-cols{display:flex;gap:64px;flex-wrap:wrap;font-size:15px;line-height:1.8;color:var(--body)}
+.foot-cols b{display:block;color:var(--ink);font-weight:600;margin-bottom:4px}
+.foot-cols a:hover{color:var(--ink);text-decoration:underline}
+.foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+
+@media (max-width:1024px){
+ .hero,.about,.visit{grid-template-columns:1fr}
+ .hero{padding-top:40px;padding-bottom:56px;gap:40px}
+ .grid3{grid-template-columns:repeat(2,1fr)}
+ .quick{grid-template-columns:1fr}
+ .head{flex-direction:column;align-items:flex-start;gap:16px}
+ .photo{min-height:320px}
+}
+@media (max-width:760px){
+ .nav-links a:not(.btn){display:none}
+ .nav-links .btn{min-height:44px;padding:0 16px;font-size:14px}
+ .grid3,.steps,.points{grid-template-columns:1fr}
+ .btn-row .btn{flex:1 1 100%}
+ .gauge{padding:32px 20px 20px}
+ .foot-cols{flex-direction:column;gap:24px}
+}
+@media (max-width:420px){.logo-text small{display:none}.nav-links .btn span{display:none}}
+</style>
+</head>
+<body>
+
+<header class="nav wrap" id="nav">
+ <a href="#top" class="logo" aria-label="Octane Performance Center home">
+  <span class="logo-mark"><svg width="26" height="26" viewBox="0 0 40 40" fill="none" stroke="#0F1115" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><path d="M7 29a13 13 0 1 1 26 0"/><path d="M20 29l7-9"/></svg></span>
+  <span class="logo-text"><b>OCTANE</b><small>PERFORMANCE CENTER</small></span>
+ </a>
+ <nav class="nav-links" aria-label="Main">
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#visit">Hours &amp; location</a>
+  <a href="tel:+18042147627" class="btn btn-primary" aria-label="Call (804) 214-7627">
+   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+   <span>(804) 214-7627</span>
+  </a>
+ </nav>
+</header>
+
+<main>
+<section id="top" class="hero wrap">
+ <div class="hero-copy">
+  <span class="tag"><i></i>Auto repair in Colonial Beach, VA</span>
+  <h1>Real repair.<br>Right here at home.</h1>
+  <p>No more hauling your car to Fredericksburg or Richmond. Octane Performance Center fixes it right, at a fair price, right on Kings Highway.</p>
+  <div class="btn-row">
+   <a href="tel:+18042147627" class="btn btn-accent">Call to book service</a>
+   <a href="https://www.google.com/maps/search/?api=1&amp;query=3161+Kings+Hwy+Colonial+Beach+VA+22443" class="btn btn-ghost" target="_blank" rel="noopener">Get directions</a>
+  </div>
+ </div>
+ <div class="gauge">
+  <svg viewBox="0 0 440 290" fill="none" aria-hidden="true">
+   <path d="M40 260a180 180 0 0 1 360 0" stroke="#E2E4E8" stroke-width="22" stroke-linecap="round"/>
+   <path d="M40 260a180 180 0 0 1 300-134" stroke="#F5A623" stroke-width="22" stroke-linecap="round"/>
+   <g stroke="#B4B8BF" stroke-width="3" stroke-linecap="round"><path d="M78 260h22"/><path d="M100 152l17 12"/><path d="M220 118v22"/><path d="M340 152l-17 12"/><path d="M362 260h-22"/></g>
+   <path class="needle" d="M220 260l96-116" stroke="#0F1115" stroke-width="6" stroke-linecap="round"/>
+   <circle cx="220" cy="260" r="16" fill="#0F1115"/><circle cx="220" cy="260" r="6" fill="#F5A623"/>
+  </svg>
+  <div class="gauge-foot">
+   <div><small>Shop hours</small><strong>Mon–Fri 9–5 · Sat 9–2</strong></div>
+   <span class="pill">Closed Sundays</span>
+  </div>
+ </div>
+</section>
+
+<section class="quick wrap" aria-label="Contact details">
+ <a href="https://www.google.com/maps/search/?api=1&amp;query=3161+Kings+Hwy+Colonial+Beach+VA+22443" target="_blank" rel="noopener">
+  <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A5300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+  <div><small>Find us</small><span>3161 Kings Hwy, Colonial Beach</span></div>
+ </a>
+ <a href="tel:+18042147627">
+  <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A5300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+  <div><small>Call the shop</small><span>(804) 214-7627</span></div>
+ </a>
+ <div>
+  <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8A5300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></svg></span>
+  <div><small>Open six days</small><span>Weekdays 9–5 · Saturday 9–2</span></div>
+ </div>
+</section>
+
+<section id="services" class="section wrap">
+ <div class="head">
+  <div><span class="tag"><i></i>What we do</span><h2>Everything under the hood.</h2></div>
+  <p>From the check-engine light to the daily driver that just doesn't feel right. Bring it in and we'll track it down.</p>
+ </div>
+ <div class="grid3">
+  <article class="card"><span class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0F1115" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M7 13l2.5-3 2.5 2 3-4 2 2"/><path d="M9 21h6"/><path d="M12 17v4"/></svg></span><h3>Diagnostics</h3><p>Check-engine lights, warning codes, strange noises and drivability problems — found and explained.</p></article>
+  <article class="card"><span class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0F1115" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3"/><path d="M21 12h-3"/><path d="M12 21v-3"/><path d="M3 12h3"/></svg></span><h3>Brakes</h3><p>Pads, rotors, calipers and brake fluid, so your car stops the way it should.</p></article>
+  <article class="card"><span class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0F1115" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/></svg></span><h3>Oil &amp; fluids</h3><p>Oil changes, coolant, transmission and differential fluid, and routine maintenance.</p></article>
+  <article class="card"><span class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0F1115" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16"/><path d="M7 20V9"/><path d="M17 20V9"/><path d="M5 9h4"/><path d="M15 9h4"/><path d="M7 5v4"/><path d="M17 5v4"/><path d="M7 14h10"/></svg></span><h3>Suspension &amp; steering</h3><p>Shocks, struts, ball joints and tie rods for a car that rides and handles right.</p></article>
+  <article class="card"><span class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0F1115" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h3l2-2h5l2 2h2v7h-2l-2 2h-6l-2-2H5z"/><path d="M2 11v3"/><path d="M22 10v5"/><path d="M10 4h4"/><path d="M12 4v3"/></svg></span><h3>Engine &amp; drivetrain</h3><p>Repairs on engines, transmissions and everything that gets power to the wheels.</p></article>
+  <article class="card feature"><span class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><h3>Performance</h3><p>[Describe your performance work — upgrades, tuning, exhaust, intakes — whatever you offer.]</p></article>
+ </div>
+</section>
+
+<section id="about" class="section wrap" style="padding-top:0">
+ <div class="about">
+  <div class="photo">
+   <!-- Replace this div's contents with: <img src="images/shop.jpg" alt="The Octane Performance Center shop"> -->
+   <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#6B7079" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 8"/></svg>
+   [Photo of your shop or team]
+  </div>
+  <div class="about-copy">
+   <span class="tag"><i></i>Your neighborhood shop</span>
+   <h2>Colonial Beach finally has its shop.</h2>
+   <p>For years, a real repair meant a long drive out of town. Octane Performance Center puts a full-service shop right on Kings Highway, so you can drop your car off close to home and get back to your day.</p>
+   <p>[Add a line or two about who runs the shop and your experience.]</p>
+   <div class="points">
+    <div><b>Fair pricing</b><span>Straightforward quotes before any work starts.</span></div>
+    <div><b>Close to home</b><span>No trip to Fredericksburg or Richmond required.</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="steps-sec section wrap">
+ <div class="head"><div><span class="tag"><i></i>How it works</span><h2>Three steps back on the road.</h2></div></div>
+ <ol class="steps">
+  <li><span class="num">1</span><strong>Call or stop by</strong><span>Tell us what's going on and set up a time to bring it in.</span></li>
+  <li><span class="num">2</span><strong>We find the problem</strong><span>We inspect the car and walk you through what it needs and what it costs.</span></li>
+  <li><span class="num">3</span><strong>You drive away</strong><span>Work only starts once you approve it. Then you're back on the road.</span></li>
+ </ol>
+</section>
+
+<section id="visit" class="section wrap">
+ <div class="visit">
+  <div class="hours">
+   <span class="tag"><i></i>Hours</span>
+   <h2>Open six days a week.</h2>
+   <table>
+    <tr><td>Monday</td><td>9:00 AM – 5:00 PM</td></tr>
+    <tr><td>Tuesday</td><td>9:00 AM – 5:00 PM</td></tr>
+    <tr><td>Wednesday</td><td>9:00 AM – 5:00 PM</td></tr>
+    <tr><td>Thursday</td><td>9:00 AM – 5:00 PM</td></tr>
+    <tr><td>Friday</td><td>9:00 AM – 5:00 PM</td></tr>
+    <tr><td>Saturday</td><td>9:00 AM – 2:00 PM</td></tr>
+    <tr><td>Sunday</td><td>Closed</td></tr>
+   </table>
+  </div>
+  <div class="visit-side">
+   <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=3161+Kings+Hwy+Colonial+Beach+VA+22443" target="_blank" rel="noopener" aria-label="Open the shop location in Google Maps">
+    <svg class="bg" viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+     <path d="M-20 300C120 260 200 330 320 280S520 180 640 210" stroke="#fff" stroke-width="26"/>
+     <path d="M180 -20L240 440" stroke="#fff" stroke-width="12"/><path d="M430 -20L400 440" stroke="#fff" stroke-width="12"/>
+     <path d="M-20 120L640 90" stroke="#fff" stroke-width="8"/>
+     <path d="M-20 400C150 370 350 420 640 360" stroke="#D6E6EC" stroke-width="40"/>
+    </svg>
+    <div class="pin">
+     <span>Octane Performance Center</span>
+     <svg width="36" height="46" viewBox="0 0 40 52" aria-hidden="true"><path d="M20 50S38 30 38 18a18 18 0 1 0-36 0c0 12 18 32 18 32z" fill="#F5A623" stroke="#0F1115" stroke-width="2"/><circle cx="20" cy="18" r="6" fill="#0F1115"/></svg>
+    </div>
+   </a>
+   <div class="loc">
+    <address>3161 Kings Hwy<br>Colonial Beach, VA 22443</address>
+    <div class="btn-row">
+     <a href="https://www.google.com/maps/search/?api=1&amp;query=3161+Kings+Hwy+Colonial+Beach+VA+22443" class="btn btn-primary" target="_blank" rel="noopener">Get directions</a>
+     <a href="tel:+18042147627" class="btn btn-ghost">(804) 214-7627</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="cta-wrap wrap">
+ <div class="cta">
+  <div><h2>Hearing a noise?<br>Let's take a look.</h2><p>Call the shop and we'll get you on the schedule.</p></div>
+  <a href="tel:+18042147627" class="btn btn-primary" style="min-height:64px;padding:0 34px;font-size:20px">Call (804) 214-7627</a>
+ </div>
+</section>
+</main>
+
+<footer class="wrap">
+ <div class="foot-top">
+  <a href="#top" class="logo" aria-label="Back to top">
+   <span class="logo-mark"><svg width="26" height="26" viewBox="0 0 40 40" fill="none" stroke="#0F1115" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><path d="M7 29a13 13 0 1 1 26 0"/><path d="M20 29l7-9"/></svg></span>
+   <span class="logo-text"><b>OCTANE</b><small>PERFORMANCE CENTER</small></span>
+  </a>
+  <div class="foot-cols">
+   <div><b>Visit</b>3161 Kings Hwy<br>Colonial Beach, VA 22443</div>
+   <div><b>Hours</b>Mon–Fri 9 AM – 5 PM<br>Sat 9 AM – 2 PM · Sun closed</div>
+   <div><b>Contact</b><a href="tel:+18042147627">(804) 214-7627</a></div>
+  </div>
+ </div>
+ <div class="foot-bottom">
+  <span>© 2026 Octane Performance Center</span>
+  <span>Auto repair in Colonial Beach, Virginia</span>
+ </div>
+</footer>
+
+<script>
+ (function(){var n=document.getElementById('nav');function f(){n.classList.toggle('scrolled',window.scrollY>8)}f();window.addEventListener('scroll',f,{passive:true})})();
+</script>
+</body>
+</html>
